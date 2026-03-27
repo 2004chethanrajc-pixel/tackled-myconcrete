@@ -1,0 +1,109 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+ 
+  background-color: #f5f5f5;
+}
+
+/* Global Icon Styles */
+.fas, .far, .fab {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  display: inline-block !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Ensure icons are visible */
+i.fas, i.far, i.fab {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ===== Tappable phone & email links ===== */
+a[href^="tel:"],
+a[href^="mailto:"] {
+  color: #2563EB;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s, text-decoration 0.15s;
+}
+
+a[href^="tel:"]:hover,
+a[href^="mailto:"]:hover {
+  color: #1D4ED8;
+  text-decoration: underline;
+}
+
+a[href^="tel:"]::before {
+  content: "\f095";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 5px;
+  font-size: 0.85em;
+}
+
+a[href^="mailto:"]::before {
+  content: "\f0e0";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 5px;
+  font-size: 0.85em;
+}
+
+/* ===== Dark mode — modal & form inputs ===== */
+body.dark-mode-active .modal-content input,
+body.dark-mode-active .modal-content textarea,
+body.dark-mode-active .modal-content select,
+body.dark-mode-active .modal-form input,
+body.dark-mode-active .modal-form textarea,
+body.dark-mode-active .modal-form select,
+body.dark-mode-active .form-card input,
+body.dark-mode-active .form-card textarea,
+body.dark-mode-active .form-card select {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+body.dark-mode-active .modal-content input::placeholder,
+body.dark-mode-active .modal-content textarea::placeholder,
+body.dark-mode-active .modal-form input::placeholder,
+body.dark-mode-active .modal-form textarea::placeholder,
+body.dark-mode-active .form-card input::placeholder,
+body.dark-mode-active .form-card textarea::placeholder {
+  color: #64748b !important;
+}
+
+body.dark-mode-active .modal-content,
+body.dark-mode-active .modal-form {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-mode-active .modal-header h2,
+body.dark-mode-active .modal-form label,
+body.dark-mode-active .form-card label,
+body.dark-mode-active .form-label {
+  color: #f1f5f9 !important;
+}
+
+body.dark-mode-active .modal-content option,
+body.dark-mode-active .modal-form option {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
